@@ -1,19 +1,19 @@
 package pl.piotrdawidziuk.kotlinnotes02
 
-class Task(
-    private var title: String,
-    private var todos: List<Todo>?,
-    private var tag: Tag?
+data class Task @JvmOverloads constructor(
+    var title: String,
+    var todos: MutableList<Todo> = mutableListOf(),
+    var tag: Tag? = null
 )
-class Todo (
-    private var description: String,
-    private var isComplete: Boolean
+data class Todo (
+    var description: String,
+    var isComplete: Boolean
 )
-class Tag (
-    private var name:String,
-    private var colorResId: Int
+data class Tag (
+    var name:String,
+    var colorResId: Int
 )
-class Note (
-    private val description: String,
-    private val tag: Tag?
+data class Note (
+    val description: String,
+    val tag: Tag? = null
 )
