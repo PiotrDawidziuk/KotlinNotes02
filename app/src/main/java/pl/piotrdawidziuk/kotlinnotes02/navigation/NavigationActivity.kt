@@ -3,8 +3,10 @@ package pl.piotrdawidziuk.kotlinnotes02.navigation
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_navigation.*
 import pl.piotrdawidziuk.kotlinnotes02.R
+import pl.piotrdawidziuk.kotlinnotes02.notes.NotesListFragment
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -15,6 +17,7 @@ class NavigationActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notes -> {
+                replaceFragment(NotesListFragment.newInstance())
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -28,6 +31,13 @@ class NavigationActivity : AppCompatActivity() {
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
 
+    }
+
+    private fun replaceFragment(fragment: Fragment){
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentHolder,fragment)
+            .commit()
     }
 
 }
