@@ -12,11 +12,9 @@ class NavigationActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_tasks -> {
-                messageTextView!!.setText(R.string.title_task)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notes -> {
-                messageTextView!!.setText(R.string.title_note)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -26,9 +24,6 @@ class NavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
-
-
-        messageTextView.text = getString(R.string.title_task)
 
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
