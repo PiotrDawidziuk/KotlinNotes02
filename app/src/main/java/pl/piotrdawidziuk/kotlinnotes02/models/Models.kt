@@ -1,4 +1,4 @@
-package pl.piotrdawidziuk.kotlinnotes02
+package pl.piotrdawidziuk.kotlinnotes02.models
 
 data class Task @JvmOverloads constructor(
     var title: String,
