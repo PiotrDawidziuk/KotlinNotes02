@@ -13,3 +13,7 @@ class Tag (
     private var name:String,
     private var colorResId: Int
 )
+class Note (
+    private val description: String,
+    private val tag: Tag?
+)
