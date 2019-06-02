@@ -1,11 +1,13 @@
 package pl.piotrdawidziuk.kotlinnotes02.navigation
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_navigation.*
 import pl.piotrdawidziuk.kotlinnotes02.R
+import pl.piotrdawidziuk.kotlinnotes02.create.CreateActivity
 import pl.piotrdawidziuk.kotlinnotes02.notes.NotesListFragment
 import pl.piotrdawidziuk.kotlinnotes02.tasks.TasksListFragment
 
@@ -32,8 +34,10 @@ class NavigationActivity : AppCompatActivity() {
         replaceFragment(TasksListFragment.newInstance())
 
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
 
-
+    private fun goToCreateActivity(){
+        startActivity(Intent(this,CreateActivity::class.java))
     }
 
     private fun replaceFragment(fragment: Fragment){
