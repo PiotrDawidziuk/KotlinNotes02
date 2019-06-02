@@ -8,13 +8,13 @@ I highly reccomend his course on Udemy:
 https://www.udemy.com/intermediate-android-development-and-kotlin/
 
 ## What I learned
-Buliding Data Models in Kotlin
-Fragments 
-Recycler Views 
-Adapters
-Iflating Views
-Custom Views
-Converting Java to Kotlin
+Buliding Data Models in Kotlin  
+Fragments  
+Recycler Views  
+Adapters  
+Iflating Views  
+Custom Views  
+Converting Java to Kotlin  
 
 ## Sources
 icons downloaded from: https://material.io/
