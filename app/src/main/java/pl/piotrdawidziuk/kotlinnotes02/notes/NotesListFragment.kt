@@ -42,4 +42,9 @@ class NotesListFragment : Fragment() {
         fun newInstance() = NotesListFragment()
     }
 
+    interface TouchActionDelegate {
+        fun onAddButtonClicked()
+    }
+
+
 }

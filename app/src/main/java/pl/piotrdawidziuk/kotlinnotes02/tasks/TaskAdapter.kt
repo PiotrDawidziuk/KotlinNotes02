@@ -1,6 +1,7 @@
 package pl.piotrdawidziuk.kotlinnotes02.tasks
 
 import android.view.LayoutInflater
+import android.view.TouchDelegate
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,9 +12,9 @@ import pl.piotrdawidziuk.kotlinnotes02.models.Task
 import pl.piotrdawidziuk.kotlinnotes02.views.TaskView
 
 class TaskAdapter(
-    taskList: MutableList<Task> = mutableListOf()
-
-): BaseRecyclerAdapter<Task>(taskList) {
+    taskList: MutableList<Task> = mutableListOf(),
+    val touchActionDelegate: TasksListFragment.TouchActionDelegate
+    ): BaseRecyclerAdapter<Task>(taskList) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = if(viewType == TYPE_INFO){
         TaskViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_task,parent,false))
@@ -27,9 +28,14 @@ class TaskAdapter(
         }
     }
 
-    class AddButtonViewHolder (view: View): BaseRecyclerAdapter.AddButtonViewHolder(view){
+    inner class AddButtonViewHolder (view: View): BaseRecyclerAdapter.AddButtonViewHolder(view){
         override fun onBind(data: Unit) {
             view.buttonText.text = view.context.getString(R.string.add_button_task)
+
+            view.setOnClickListener{
+                touchActionDelegate.onAddButtonClicked()
+            }
+
         }
     }
 

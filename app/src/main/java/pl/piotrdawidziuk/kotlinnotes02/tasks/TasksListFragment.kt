@@ -20,7 +20,6 @@ class TasksListFragment : Fragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-
         context?.let {
             if (it is TouchActionDelegate){
                 touchActionDelegate = it
@@ -54,7 +53,7 @@ class TasksListFragment : Fragment() {
                 Todo("Test Three!"),
                 Todo("Test Four!",true)
             ))
-        ))
+        ), touchActionDelegate)
         recyclerView.adapter = adapter
     }
 
