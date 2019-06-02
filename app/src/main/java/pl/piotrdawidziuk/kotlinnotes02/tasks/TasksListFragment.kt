@@ -25,7 +25,6 @@ class TasksListFragment : Fragment() {
                 touchActionDelegate = it
             }
         }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

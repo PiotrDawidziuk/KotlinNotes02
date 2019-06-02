@@ -11,8 +11,8 @@ import pl.piotrdawidziuk.kotlinnotes02.models.Note
 import pl.piotrdawidziuk.kotlinnotes02.views.NotesView
 
 class NoteAdapter(
-    noteList: MutableList<Note> = mutableListOf()
-
+    noteList: MutableList<Note> = mutableListOf(),
+    val touchActionDelegate: NotesListFragment.TouchActionDelegate
 ): BaseRecyclerAdapter<Note>(noteList){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder  = if(viewType == TYPE_AND_BUTTON){
      AddButtonViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.view_add_button,parent,false))
@@ -25,9 +25,13 @@ class NoteAdapter(
         }
     }
 
-    class AddButtonViewHolder (view: View): BaseRecyclerAdapter.AddButtonViewHolder(view){
+    inner class AddButtonViewHolder (view: View): BaseRecyclerAdapter.AddButtonViewHolder(view){
         override fun onBind(data: Unit) {
             view.buttonText.text = view.context.getString(R.string.add_button_note)
+
+            view.setOnClickListener{
+                touchActionDelegate.onAddButtonClicked()
+            }
         }
     }
 }

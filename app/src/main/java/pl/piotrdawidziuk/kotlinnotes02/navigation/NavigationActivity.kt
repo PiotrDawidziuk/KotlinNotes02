@@ -11,7 +11,7 @@ import pl.piotrdawidziuk.kotlinnotes02.create.CreateActivity
 import pl.piotrdawidziuk.kotlinnotes02.notes.NotesListFragment
 import pl.piotrdawidziuk.kotlinnotes02.tasks.TasksListFragment
 
-class NavigationActivity : AppCompatActivity(), TasksListFragment.TouchActionDelegate {
+class NavigationActivity : AppCompatActivity(), TasksListFragment.TouchActionDelegate, NotesListFragment.TouchActionDelegate {
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -50,4 +50,6 @@ class NavigationActivity : AppCompatActivity(), TasksListFragment.TouchActionDel
     override fun onAddButtonClicked() {
         goToCreateActivity()
     }
+
+    
 }
