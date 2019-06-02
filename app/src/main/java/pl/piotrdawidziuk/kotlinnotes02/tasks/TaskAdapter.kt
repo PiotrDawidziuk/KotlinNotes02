@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.view_add_button.view.*
 import pl.piotrdawidziuk.kotlinnotes02.R
 import pl.piotrdawidziuk.kotlinnotes02.foundations.BaseRecyclerAdapter
 import pl.piotrdawidziuk.kotlinnotes02.models.Task
+import pl.piotrdawidziuk.kotlinnotes02.navigation.NavigationActivity
 import pl.piotrdawidziuk.kotlinnotes02.views.TaskView
 
 class TaskAdapter(
@@ -33,7 +34,7 @@ class TaskAdapter(
             view.buttonText.text = view.context.getString(R.string.add_button_task)
 
             view.setOnClickListener{
-                touchActionDelegate.onAddButtonClicked()
+                touchActionDelegate.onAddButtonClicked(NavigationActivity.FRAGMENT_VALUE_IS_TASK)
             }
 
         }

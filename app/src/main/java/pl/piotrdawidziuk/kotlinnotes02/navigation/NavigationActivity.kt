@@ -36,8 +36,10 @@ class NavigationActivity : AppCompatActivity(), TasksListFragment.TouchActionDel
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    private fun goToCreateActivity(){
-        startActivity(Intent(this,CreateActivity::class.java))
+    private fun goToCreateActivity(fragmentValue: String){
+        startActivity(Intent(this,CreateActivity::class.java).apply {
+            putExtra(FRAGMENT_TYPE_KEY,fragmentValue)
+        })
     }
 
     private fun replaceFragment(fragment: Fragment){
@@ -47,9 +49,13 @@ class NavigationActivity : AppCompatActivity(), TasksListFragment.TouchActionDel
             .commit()
     }
 
-    override fun onAddButtonClicked() {
-        goToCreateActivity()
+    override fun onAddButtonClicked(value: String) {
+        goToCreateActivity(value)
     }
 
-    
+    companion object {
+        const val FRAGMENT_TYPE_KEY = "f_t_k"
+        const val FRAGMENT_VALUE_IS_NOTE = "f_v_n"
+        const val FRAGMENT_VALUE_IS_TASK = "f_v_t"
+    }
 }

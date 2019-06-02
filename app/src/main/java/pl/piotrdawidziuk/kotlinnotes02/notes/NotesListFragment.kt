@@ -57,7 +57,7 @@ class NotesListFragment : Fragment() {
     }
 
     interface TouchActionDelegate {
-        fun onAddButtonClicked()
+        fun onAddButtonClicked(value: String)
     }
 
 
