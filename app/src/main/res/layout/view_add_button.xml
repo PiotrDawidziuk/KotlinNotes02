@@ -8,6 +8,7 @@
             android:id="@+id/buttonText"
             tools:text="Sample Text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black"/>
 
 </LinearLayout>
