@@ -15,7 +15,6 @@ class TaskAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_task,parent,false))
 
-
     override fun getItemCount(): Int = taskList.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
