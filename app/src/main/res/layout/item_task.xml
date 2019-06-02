@@ -15,7 +15,7 @@
             app:layout_constraintStart_toStartOf="parent"
     />
     <LinearLayout
-            android:id="@+id/todoContainter"
+            android:id="@+id/todoContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
