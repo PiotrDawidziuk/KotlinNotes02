@@ -10,6 +10,7 @@ import pl.piotrdawidziuk.kotlinnotes02.R
 import pl.piotrdawidziuk.kotlinnotes02.foundations.BaseRecyclerAdapter
 import pl.piotrdawidziuk.kotlinnotes02.models.Note
 import pl.piotrdawidziuk.kotlinnotes02.models.Task
+import pl.piotrdawidziuk.kotlinnotes02.views.NotesView
 
 class NoteAdapter(
     noteList: MutableList<Note> = mutableListOf()
@@ -20,7 +21,7 @@ class NoteAdapter(
 
     class ViewHolder (view: View): BaseViewHolder<Note>(view){
         override fun onBind(data: Note) {
-            view.descriptionView.text = data.description
+            (view as NotesView).initView(data)
         }
     }
 }
