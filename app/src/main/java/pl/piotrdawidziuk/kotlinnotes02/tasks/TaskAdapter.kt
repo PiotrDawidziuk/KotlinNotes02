@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_task.view.*
 import pl.piotrdawidziuk.kotlinnotes02.R
 import pl.piotrdawidziuk.kotlinnotes02.models.Task
 
@@ -18,11 +19,15 @@ class TaskAdapter(
     override fun getItemCount(): Int = taskList.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        (holder as ViewHolder).onBind(taskList[position])
     }
 
 
     class ViewHolder (val view: View): RecyclerView.ViewHolder(view){
+
+        fun onBind(task: Task){
+            view.titleView.text = task.title
+        }
 
     }
 
