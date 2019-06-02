@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.view_todo.view.*
 import pl.piotrdawidziuk.kotlinnotes02.R
 import pl.piotrdawidziuk.kotlinnotes02.foundations.BaseRecyclerAdapter
 import pl.piotrdawidziuk.kotlinnotes02.models.Task
+import pl.piotrdawidziuk.kotlinnotes02.views.TaskView
 import pl.piotrdawidziuk.kotlinnotes02.views.TodoView
 
 class TaskAdapter(
@@ -22,16 +23,7 @@ class TaskAdapter(
 
     class ViewHolder (view: View): BaseViewHolder<Task>(view){
         override fun onBind(data: Task) {
-            view.titleView.text = data.title
-
-            data.todos.forEach{todo ->
-
-                val todoView = (LayoutInflater.from(view.context).inflate(R.layout.view_todo, view.todoContainer,false)as TodoView).apply {
-                 initView(todo)
-                }
-                view.todoContainer.addView(todoView)
-            }
-
+            (view as TaskView).initView(data)
         }
     }
 
