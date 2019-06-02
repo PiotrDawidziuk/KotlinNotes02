@@ -1,5 +1,5 @@
 # KotlinNotes02
-KotlinNotes02 is an app that lets you make notes and plan tasks. 
+KotlinNotes02 is an app that lets you make notes and plan tasks.  
 You can cross out tasks you already finished.
 
 ## Inspiration
@@ -17,5 +17,5 @@ Custom Views
 Converting Java to Kotlin  
 
 ## Sources
-icons downloaded from: https://material.io/
+icons downloaded from: https://material.io/  
 colors from: https://colorhunt.co/
