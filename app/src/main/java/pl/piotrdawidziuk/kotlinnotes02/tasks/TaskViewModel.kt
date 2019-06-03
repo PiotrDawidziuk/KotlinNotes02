@@ -14,8 +14,11 @@ class TaskViewModel : ViewModel() {
         Task("Testing 2", mutableListOf(
             Todo("Test Three!"),
             Todo("Test Four!",true)
-        )) 
-    )
+        )),
+        Task("Task3", mutableListOf(
+            Todo("Test four"),
+            Todo ("test five",true))
+    ))
 
 
 
