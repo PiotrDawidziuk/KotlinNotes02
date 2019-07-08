@@ -19,7 +19,6 @@ class TaskViewModel : ViewModel() {
             Todo("Test four"),
             Todo ("test five",true))
     ))
-
-
+    
 
 }
