@@ -9,6 +9,6 @@ class NoteViewModel: ViewModel(){
         Note("Some note number 1"),
         Note("Some note number 2")
     )
-    
+
 
 }
