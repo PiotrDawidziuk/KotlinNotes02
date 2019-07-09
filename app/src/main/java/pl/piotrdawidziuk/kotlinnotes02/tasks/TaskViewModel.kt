@@ -8,8 +8,8 @@ import pl.piotrdawidziuk.kotlinnotes02.models.Todo
 
 class TaskViewModel : ViewModel() {
 
-    private val _taskListLiveData: MutableLiveData<List<Task>> = MutableLiveData()
-    val taskListLiveData: LiveData<List<Task>> = _taskListLiveData
+    private val _taskListLiveData: MutableLiveData<MutableList<Task>> = MutableLiveData()
+    val taskListLiveData: LiveData<MutableList<Task>> = _taskListLiveData
 
     init {
 
