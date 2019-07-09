@@ -47,7 +47,7 @@ class NotesListFragment : Fragment() {
 
 
         recyclerView.layoutManager = LinearLayoutManager(context)
-        adapter = NoteAdapter(viewModel.getFakeData(),touchActionDelegate)
+        adapter = NoteAdapter(touchActionDelegate=touchActionDelegate)
         recyclerView.adapter = adapter
         bindViewModel()
     }

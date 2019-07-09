@@ -16,7 +16,7 @@ class TaskAdapter(
     taskList: MutableList<Task> = mutableListOf(),
     val touchActionDelegate: TasksListFragment.TouchActionDelegate
     ): BaseRecyclerAdapter<Task>(taskList) {
-    
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = if(viewType == TYPE_INFO){
         TaskViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_task,parent,false))
     }else{
