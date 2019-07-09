@@ -3,22 +3,18 @@ package pl.piotrdawidziuk.kotlinnotes02.tasks
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_tasks_list.*
-
 import pl.piotrdawidziuk.kotlinnotes02.R
-import pl.piotrdawidziuk.kotlinnotes02.models.Task
-import pl.piotrdawidziuk.kotlinnotes02.models.Todo
 
 class TasksListFragment : Fragment() {
 
     lateinit var viewModel: TaskViewModel
-
     lateinit var touchActionDelegate: TouchActionDelegate
 
     override fun onAttach(context: Context?) {
@@ -40,9 +36,7 @@ class TasksListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         bindViewModel()
-
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = TaskAdapter(viewModel.getFakeData(), touchActionDelegate)
         recyclerView.adapter = adapter
@@ -53,7 +47,6 @@ class TasksListFragment : Fragment() {
     }
 
     companion object {
-
         fun newInstance() = TasksListFragment()
     }
 
