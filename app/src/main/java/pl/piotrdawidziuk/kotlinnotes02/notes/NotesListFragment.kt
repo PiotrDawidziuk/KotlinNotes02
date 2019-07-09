@@ -42,6 +42,8 @@ class NotesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        bindViewModel()
+
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = NoteAdapter(viewModel.getFakeData(),touchActionDelegate)
         recyclerView.adapter = adapter
