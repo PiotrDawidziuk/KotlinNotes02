@@ -6,7 +6,7 @@ import pl.piotrdawidziuk.kotlinnotes02.models.Todo
 
 class TaskViewModel : ViewModel() {
 
-    fun getFakeData(): List<Task> = mutableListOf(
+    fun getFakeData(): MutableList<Task> = mutableListOf(
         Task("Testing 1", mutableListOf(
             Todo("Test One!",true),
             Todo("Test Two!")
